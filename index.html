@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TapFlow — Deine Zahlen. Privat verstanden.</title>
+<meta name="description" content="TapFlow zeigt dir, wohin dein Geld wirklich fließt — komplett lokal, ohne Server, ohne fremden Zugriff. Premium ab 4,99€/Monat, jederzeit kündbar.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💰</text></svg>">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-theme="dark">
+
+<!-- ───────────────────────── NAV ───────────────────────── -->
+<header class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#top" class="brand">
+      <span class="brand__icon">💰</span>
+      <span class="brand__name">TapFlow</span>
+    </a>
+
+    <nav class="nav__links" id="navLinks">
+      <a href="#privacy" data-i18n="nav.privacy">Privatsphäre</a>
+      <a href="#insights" data-i18n="nav.insights">Analyse</a>
+      <a href="#screens" data-i18n="nav.screens">App</a>
+      <a href="#premium" data-i18n="nav.premium">Premium</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </nav>
+
+    <div class="nav__actions">
+      <button class="icon-btn" id="langToggle" aria-label="Sprache wechseln">
+        <span id="langLabel">DE</span>
+      </button>
+      <button class="icon-btn" id="themeToggle" aria-label="Theme wechseln">
+        <svg id="iconSun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+        <svg id="iconMoon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="display:none"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+      </button>
+      <a href="#waitlist" class="btn btn--primary btn--sm" data-i18n="nav.cta">Warteliste</a>
+    </div>
+
+    <button class="burger" id="burger" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+<!-- ───────────────────────── HERO ───────────────────────── -->
+<section class="hero">
+  <div class="hero__glow" data-parallax="0.10"></div>
+  <div class="hero__grid-fade"></div>
+
+  <div class="hero__inner">
+    <div class="hero__copy reveal">
+      <p class="kicker"><i class="kicker__bar"></i><span data-i18n="hero.kicker">Lokal. Verschlüsselt. Nur deins.</span></p>
+      <h1 class="hero__title">
+        <span data-i18n="hero.title1">Deine Zahlen.</span><br>
+        <span class="word-slider">
+          <span class="word-slider__word grad" id="wordSliderWord">Privat.</span>
+          <span class="word-slider__bar" id="wordSliderBar"></span>
+        </span>
+      </h1>
+      <p class="hero__sub" data-i18n="hero.sub">
+        TapFlow rechnet, sortiert und erklärt deine Finanzen direkt auf deinem Gerät — kein Server sieht jemals einen Cent davon.
+      </p>
+      <div class="hero__ctas">
+        <a href="#waitlist" class="btn btn--primary btn--lg">
+          <span data-i18n="hero.cta1">Auf die Warteliste</span>
+          <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#insights" class="btn btn--ghost btn--lg" data-i18n="hero.cta2">Wie die Analyse funktioniert</a>
+      </div>
+
+      <div class="hero__stats">
+        <div class="hero__stat">
+          <strong data-count="0">0</strong>
+          <span data-i18n="hero.stat1">Server sehen deine Daten</span>
+        </div>
+        <div class="hero__stat">
+          <strong data-count="100">0</strong>
+          <span data-i18n="hero.stat2">% bleibt auf deinem Gerät</span>
+        </div>
+        <div class="hero__stat">
+          <strong data-money data-target="4.99">€0</strong>
+          <span data-i18n="hero.stat3">für Reports & Export, kündbar</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__phone-wrap reveal" style="--delay:120ms">
+      <div class="phone phone--float" id="heroPhone">
+        <div class="phone__notch"></div>
+        <div class="phone__screen">
+          <div class="app-bar"><span data-i18n="app.title">TapFlow</span></div>
+
+          <div class="month-row">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 18l-6-6 6-6"/></svg>
+            <span data-i18n="app.month">Juni 2026</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.4" class="dim"><path d="M9 18l6-6-6-6"/></svg>
+          </div>
+
+          <div class="card balance-card">
+            <div class="balance-card__top">
+              <div>
+                <span class="dim small" data-i18n="app.greeting">Guten Abend</span>
+                <strong data-i18n="app.username">Jake</strong>
+              </div>
+              <span class="emoji">🌙</span>
+            </div>
+            <div class="balance-card__divider"></div>
+            <div class="balance-card__main">
+              <span class="dim tiny" data-i18n="app.totalBalance">GESAMTGUTHABEN</span>
+              <strong class="balance-amount" data-money data-target="3842.50">€0.00</strong>
+            </div>
+            <div class="balance-card__divider"></div>
+            <div class="balance-card__row">
+              <div class="stat-cell">
+                <span class="dot dot--accent"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 19V5M5 12l7 7 7-7"/></svg></span>
+                <div><span class="dim tiny" data-i18n="app.income">Einnahmen</span><strong class="small-amount" data-money data-target="2950">€0</strong></div>
+              </div>
+              <div class="stat-cell">
+                <span class="dot dot--neg"><svg viewBox="0 0 24 24" width="12" height="12" fill="none" stroke="currentColor" stroke-width="3"><path d="M12 5v14M5 12l7-7 7 7"/></svg></span>
+                <div><span class="dim tiny" data-i18n="app.expenses">Ausgaben</span><strong class="small-amount" data-money data-target="1107.50">€0</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="section-label" data-i18n="app.recent">Letzte Transaktionen</div>
+          <div class="card tx-list" id="heroTxList"></div>
+        </div>
+        <div class="phone__tabbar" id="heroTabbar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── PRIVACY PITCH ───────────────────────── -->
+<section class="section privacy" id="privacy">
+  <div class="privacy__grid">
+    <div class="privacy__copy reveal">
+      <p class="kicker"><i class="kicker__bar"></i><span data-i18n="privacy.kicker">Privatsphäre</span></p>
+      <h2 data-i18n-html="privacy.title">Deine Daten gehören <span class="underline-draw">dir</span>. Sonst niemandem.</h2>
+      <p class="privacy__lead" data-i18n="privacy.lead">Keine Bank-Logins, kein Tracking, kein Server, der mitliest. TapFlow ist so gebaut, dass es deine Finanzen technisch gar nicht weggeben kann.</p>
+      <ul class="privacy__points">
+        <li><strong data-i18n="privacy.p1.title">Kein Server.</strong> <span data-i18n="privacy.p1.text">Transaktionen, Ziele und Budgets verlassen dein Gerät nie.</span></li>
+        <li><strong data-i18n="privacy.p2.title">Kein Tracking.</strong> <span data-i18n="privacy.p2.text">Wir verkaufen keine Daten — weil wir keine besitzen, die wir verkaufen könnten.</span></li>
+        <li><strong data-i18n="privacy.p3.title">Du entscheidest.</strong> <span data-i18n="privacy.p3.text">Ein Export verlässt dein Gerät nur, wenn du selbst auf „Teilen” tippst.</span></li>
+      </ul>
+    </div>
+
+    <div class="privacy__diagram reveal" id="privacyDiagram" data-parallax="0.05" style="--delay:100ms">
+      <div class="diagram-node diagram-node--device">
+        <span class="diagram-node__icon">📱</span>
+        <div><strong data-i18n="privacy.node1.title">Dein Gerät</strong><span data-i18n="privacy.node1.text">Alle Berechnungen passieren hier</span></div>
+      </div>
+      <svg class="diagram-line" id="diagramLine" viewBox="0 0 4 70" preserveAspectRatio="none"><line x1="2" y1="0" x2="2" y2="70"/></svg>
+      <div class="diagram-node diagram-node--lock">
+        <span class="diagram-node__icon">🔒</span>
+        <div><strong data-i18n="privacy.node2.title">Verschlüsselt & lokal</strong><span data-i18n="privacy.node2.text">Kein Cloud-Sync, kein Konto-Login nötig</span></div>
+      </div>
+      <svg class="diagram-line" viewBox="0 0 4 70" preserveAspectRatio="none"><line x1="2" y1="0" x2="2" y2="70"/></svg>
+      <div class="diagram-node diagram-node--blocked">
+        <span class="diagram-node__icon">🚫</span>
+        <div><strong data-i18n="privacy.node3.title">Server: kein Zugriff</strong><span data-i18n="privacy.node3.text">Es gibt schlicht keinen, der mitlesen könnte</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── FEATURES ───────────────────────── -->
+<section class="section" id="features">
+  <div class="section__head section__head--left reveal">
+    <p class="kicker"><i class="kicker__bar"></i><span data-i18n="features.kicker">Funktionen</span></p>
+    <h2 data-i18n="features.title">Alles, was dein Konto wirklich braucht</h2>
+  </div>
+
+  <div class="bento">
+    <article class="bento-card bento-card--lg reveal" style="--c:#00C896">
+      <div class="bento-card__body">
+        <h3 data-i18n="features.f1.title">Sparziele</h3>
+        <p data-i18n="features.f1.text">Setz dir Ziele mit Emoji & Zielbetrag — einzahlen, entnehmen, Fortschritt live sehen.</p>
+      </div>
+      <div class="bento-visual bento-visual--goal">
+        <div class="bento-goal__top"><span>✈️</span><strong>Urlaub</strong><span class="bento-goal__pct" data-target="62">0%</span></div>
+        <div class="bento-goal__bar"><div class="bento-goal__fill" data-pct="62"></div></div>
+      </div>
+    </article>
+
+    <article class="bento-card reveal" style="--c:#3B9FE0; --delay:60ms">
+      <div class="bento-card__body">
+        <h3 data-i18n="features.f2.title">Kategorie-Budgets</h3>
+        <p data-i18n="features.f2.text">Monatslimits pro Kategorie — TapFlow warnt dich, bevor es zu spät ist.</p>
+      </div>
+      <div class="bento-visual bento-visual--budget">
+        <div class="bento-budget__top"><span>🛒</span><span>€332 / €350</span></div>
+        <div class="bento-budget__bar"><div class="bento-budget__fill" data-pct="95"></div></div>
+      </div>
+    </article>
+
+    <article class="bento-card reveal" style="--c:#E05580; --delay:120ms">
+      <div class="bento-card__body">
+        <h3 data-i18n="features.f3.title">Beleg-Scanner</h3>
+        <p data-i18n="features.f3.text">Foto vom Kassenzettel — Betrag, Kategorie & Name werden automatisch erkannt, auf dem Gerät.</p>
+      </div>
+      <div class="bento-visual bento-visual--scan">
+        <div class="bento-scan__receipt">
+          <span></span><span></span><span class="short"></span>
+          <div class="bento-scan__line"></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="bento-card reveal" style="--c:#00C896; --delay:180ms">
+      <div class="bento-card__body">
+        <h3 data-i18n="features.f4.title">Wiederkehrende Kosten</h3>
+        <p data-i18n="features.f4.text">Miete, Abos & Co. einmal anlegen — TapFlow erinnert sich jeden Monat.</p>
+      </div>
+      <div class="bento-visual bento-visual--recur">
+        <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="bento-recur__icon"><path d="M3 12a9 9 0 0 1 15.5-6.3M21 12a9 9 0 0 1-15.5 6.3"/><path d="M18 2v4h-4M6 22v-4h4"/></svg>
+      </div>
+    </article>
+
+    <article class="bento-card reveal" style="--c:#FF3B30; --delay:240ms">
+      <div class="bento-card__body">
+        <h3 data-i18n="features.f5.title">Biometric Lock</h3>
+        <p data-i18n="features.f5.text">Face ID, Fingerprint oder App-PIN — niemand außer dir öffnet die App.</p>
+      </div>
+      <div class="bento-visual bento-visual--lock">
+        <span class="bento-lock__pulse"></span>
+        <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg>
+      </div>
+    </article>
+
+    <article class="bento-card bento-card--wide reveal" style="--c:#F59E0B; --delay:300ms">
+      <div class="bento-card__body">
+        <h3 data-i18n="features.f6.title">DE & EN</h3>
+        <p data-i18n="features.f6.text">Komplett zweisprachig — die App spricht deine Sprache, sofort.</p>
+      </div>
+      <div class="bento-visual bento-visual--lang" id="bentoLangToggle">
+        <span class="bento-lang__pill is-active">🇩🇪 DE</span>
+        <span class="bento-lang__pill">🇺🇸 EN</span>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ───────────────────────── INSIGHTS / ANALYSE ───────────────────────── -->
+<section class="section section--dark insights-pitch" id="insights">
+  <div class="section__head section__head--left reveal">
+    <p class="kicker"><i class="kicker__bar"></i><span data-i18n="insights.kicker">Analyse</span></p>
+    <h2 data-i18n-html="insights.title">Du siehst nicht nur, was du ausgegeben hast. Du verstehst <span class="underline-draw">warum</span>.</h2>
+    <p data-i18n="insights.lead">Das ist unser Kern: TapFlow rechnet jeden Monat live aus, wohin dein Geld fließt, wo es sich häuft und wie du im Vergleich zu Gleichaltrigen stehst — alles lokal berechnet, nichts beschönigt.</p>
+  </div>
+
+  <div class="carousel reveal" id="insightsCarousel" data-parallax="0.03">
+    <div class="carousel__viewport">
+      <div class="carousel__track" id="carouselTrack">
+
+        <div class="carousel__card">
+          <span class="carousel__card-tag" data-i18n="insights.c1.tag">Ausgaben-Breakdown</span>
+          <div class="donut-wrap" style="padding:6px 0 0">
+            <svg class="donut" width="84" height="84" viewBox="0 0 36 36">
+              <circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--card-2)" stroke-width="5"></circle>
+              <circle cx="18" cy="18" r="15.5" fill="none" stroke="#F59E0B" stroke-width="5" stroke-dasharray="35 65" stroke-dashoffset="25" stroke-linecap="round"></circle>
+              <circle cx="18" cy="18" r="15.5" fill="none" stroke="#3B9FE0" stroke-width="5" stroke-dasharray="25 75" stroke-dashoffset="-10" stroke-linecap="round"></circle>
+              <circle cx="18" cy="18" r="15.5" fill="none" stroke="#E05580" stroke-width="5" stroke-dasharray="18 82" stroke-dashoffset="-35" stroke-linecap="round"></circle>
+              <circle cx="18" cy="18" r="15.5" fill="none" stroke="#00C896" stroke-width="5" stroke-dasharray="22 78" stroke-dashoffset="-53" stroke-linecap="round"></circle>
+            </svg>
+            <div class="legend">
+              <div class="legend__row"><span class="legend__dot" style="background:#F59E0B"></span><span data-i18n="cat.groceries">Lebensmittel</span><span>35%</span></div>
+              <div class="legend__row"><span class="legend__dot" style="background:#3B9FE0"></span><span data-i18n="cat.housing">Wohnen</span><span>25%</span></div>
+              <div class="legend__row"><span class="legend__dot" style="background:#E05580"></span><span data-i18n="cat.leisure">Freizeit</span><span>18%</span></div>
+              <div class="legend__row"><span class="legend__dot" style="background:#00C896"></span><span data-i18n="cat.savings">Sparen</span><span>22%</span></div>
+            </div>
+          </div>
+          <p class="carousel__card-note" data-i18n="insights.c1.note">In Sekunden siehst du, welche Kategorie wirklich an deinem Geld zieht.</p>
+        </div>
+
+        <div class="carousel__card">
+          <span class="carousel__card-tag" data-i18n="insights.c2.tag">6-Monats-Trend</span>
+          <div class="bars" id="carouselBars" style="height:90px;padding-top:14px;"></div>
+          <p class="carousel__card-note" data-i18n="insights.c2.note">Einnahmen und Ausgaben nebeneinander — Muster fallen sofort auf.</p>
+        </div>
+
+        <div class="carousel__card">
+          <span class="carousel__card-tag" data-i18n="insights.c3.tag">Sparquote im Vergleich</span>
+          <div class="rate-compare">
+            <div class="rate-compare__cell"><strong style="color:var(--accent)">18,4%</strong><span data-i18n="insights.c3.you">Deine Quote</span></div>
+            <div class="rate-compare__div"></div>
+            <div class="rate-compare__cell"><strong>12,1%</strong><span data-i18n="insights.c3.peers">Ø Alter 29</span></div>
+          </div>
+          <p class="carousel__card-note" data-i18n="insights.c3.note">Ein ehrlicher Vergleich statt Bauchgefühl — komplett anonym berechnet, nur für dich sichtbar.</p>
+        </div>
+
+        <div class="carousel__card">
+          <span class="carousel__card-tag" data-i18n="insights.c4.tag">Budget-Warnung</span>
+          <div class="budget-row" style="padding:14px 4px">
+            <div class="budget-row__top"><span>🛒 <span data-i18n="cat.groceries">Lebensmittel</span></span><span>€332 / €350</span></div>
+            <div class="budget-row__bar"><div class="budget-row__fill" style="width:95%;background:var(--orange-c, #F59E0B)"></div></div>
+          </div>
+          <p class="carousel__card-note" data-i18n="insights.c4.note">TapFlow meldet sich, bevor das Limit reißt — nicht erst danach.</p>
+        </div>
+
+      </div>
+    </div>
+    <div class="carousel__controls">
+      <button class="carousel__arrow" id="carouselPrev" aria-label="Zurück">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M15 6l-6 6 6 6"/></svg>
+      </button>
+      <div class="carousel__dots" id="carouselDots"></div>
+      <button class="carousel__arrow" id="carouselNext" aria-label="Weiter">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 6l6 6-6 6"/></svg>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── SCREENS SHOWCASE ───────────────────────── -->
+<section class="section" id="screens">
+  <div class="section__head reveal">
+    <p class="kicker"><i class="kicker__bar"></i><span data-i18n="screens.kicker">Die App</span></p>
+    <h2 data-i18n="screens.title">Jeder Screen durchdacht</h2>
+    <p data-i18n="screens.sub">Tippe durch die wichtigsten Ansichten von TapFlow.</p>
+  </div>
+
+  <div class="showcase">
+    <div class="showcase__tabs reveal" id="showcaseTabs">
+      <button class="showcase__tab is-active" data-screen="home">
+        <span class="showcase__tab-icon"></span>
+        <span data-i18n="screens.tab.home">Home</span>
+      </button>
+      <button class="showcase__tab" data-screen="insights">
+        <span class="showcase__tab-icon"></span>
+        <span data-i18n="screens.tab.insights">Insights</span>
+      </button>
+      <button class="showcase__tab" data-screen="add">
+        <span class="showcase__tab-icon"></span>
+        <span data-i18n="screens.tab.add">Hinzufügen</span>
+      </button>
+      <button class="showcase__tab" data-screen="budget">
+        <span class="showcase__tab-icon"></span>
+        <span data-i18n="screens.tab.budget">Budget</span>
+      </button>
+      <button class="showcase__tab" data-screen="scanner">
+        <span class="showcase__tab-icon"></span>
+        <span data-i18n="screens.tab.scanner">Scanner</span>
+      </button>
+      <button class="showcase__tab" data-screen="onboarding">
+        <span class="showcase__tab-icon"></span>
+        <span data-i18n="screens.tab.onboarding">Onboarding</span>
+      </button>
+      <button class="showcase__tab" data-screen="profile">
+        <span class="showcase__tab-icon"></span>
+        <span data-i18n="screens.tab.profile">Profil</span>
+      </button>
+    </div>
+
+    <div class="showcase__stage reveal" style="--delay:80ms">
+      <div class="showcase__desc" id="showcaseDesc">
+        <h3 data-i18n="screens.home.title">Alles auf einen Blick</h3>
+        <p data-i18n="screens.home.text">Saldo, Einnahmen, Ausgaben und Sparziele — direkt nach dem Öffnen. Wische seitlich, um zwischen Tabs zu springen.</p>
+        <ul class="checklist">
+          <li data-i18n="screens.home.b1">Monatsweise Navigation</li>
+          <li data-i18n="screens.home.b2">Swipe zum Bearbeiten / Löschen</li>
+          <li data-i18n="screens.home.b3">Live-Sparziel-Fortschritt</li>
+        </ul>
+      </div>
+
+      <div class="phone phone--showcase" id="showcasePhone">
+        <div class="phone__notch"></div>
+        <div class="phone__screen" id="showcaseScreen"></div>
+        <div class="phone__tabbar" id="showcaseTabbar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── THEMES ───────────────────────── -->
+<section class="section" id="themes">
+  <div class="section__head reveal">
+    <p class="kicker"><i class="kicker__bar"></i><span data-i18n="themes.kicker">Designs</span></p>
+    <h2 data-i18n="themes.title">6 Looks. Ein Tap.</h2>
+    <p data-i18n="themes.sub">Light, Dark, AMOLED, Ocean, Rose oder Sky — wechsle jederzeit im Profil.</p>
+  </div>
+
+  <div class="theme-demo">
+    <div class="theme-demo__swatches reveal" id="themeSwatches">
+      <button class="swatch is-active" data-theme-demo="light"><span class="swatch__dot" style="background:#00C896"></span>Light</button>
+      <button class="swatch" data-theme-demo="dark"><span class="swatch__dot" style="background:#00C896"></span>Dark</button>
+      <button class="swatch" data-theme-demo="amoled"><span class="swatch__dot" style="background:#00E5A8"></span>AMOLED</button>
+      <button class="swatch" data-theme-demo="ocean"><span class="swatch__dot" style="background:#4DAFFF"></span>Ocean</button>
+      <button class="swatch" data-theme-demo="rose"><span class="swatch__dot" style="background:#E05580"></span>Rose</button>
+      <button class="swatch" data-theme-demo="sky"><span class="swatch__dot" style="background:#3B9FE0"></span>Sky</button>
+    </div>
+
+    <div class="phone phone--theme reveal" style="--delay:80ms" id="themePhone">
+      <div class="phone__notch"></div>
+      <div class="phone__screen">
+        <div class="app-bar"><span data-i18n="app.title">TapFlow</span></div>
+        <div class="card balance-card balance-card--mini">
+          <span class="dim tiny" data-i18n="app.totalBalance">GESAMTGUTHABEN</span>
+          <strong class="balance-amount">€3.842,50</strong>
+        </div>
+        <div class="section-label" data-i18n="app.recent">Letzte Transaktionen</div>
+        <div class="card tx-list" id="themeTxList"></div>
+      </div>
+      <div class="phone__tabbar" id="themeTabbar"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── HOW IT WORKS ───────────────────────── -->
+<section class="section section--dark" id="how">
+  <div class="section__head reveal">
+    <p class="kicker"><i class="kicker__bar"></i><span data-i18n="how.kicker">Ablauf</span></p>
+    <h2 data-i18n="how.title">In vier Schritten im Fluss</h2>
+  </div>
+
+  <div class="steps">
+    <div class="steps__line"><div class="steps__line-fill" id="stepsLine"></div></div>
+    <div class="step reveal">
+      <div class="step__num">1</div>
+      <h3 data-i18n="how.s1.title">Onboarding</h3>
+      <p data-i18n="how.s1.text">Name, Gehalt, Gehaltstag, PIN — in unter einer Minute startklar.</p>
+    </div>
+    <div class="step reveal" style="--delay:100ms">
+      <div class="step__num">2</div>
+      <h3 data-i18n="how.s2.title">Erfassen</h3>
+      <p data-i18n="how.s2.text">Manuell eintragen oder Beleg scannen lassen.</p>
+    </div>
+    <div class="step reveal" style="--delay:200ms">
+      <div class="step__num">3</div>
+      <h3 data-i18n="how.s3.title">Ziele setzen</h3>
+      <p data-i18n="how.s3.text">Budgets pro Kategorie & Sparziele mit Emoji anlegen.</p>
+    </div>
+    <div class="step reveal" style="--delay:300ms">
+      <div class="step__num">4</div>
+      <h3 data-i18n="how.s4.title">Verstehen</h3>
+      <p data-i18n="how.s4.text">Insights zeigen dir, wohin dein Geld wirklich fließt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── PREMIUM ───────────────────────── -->
+<section class="section premium" id="premium">
+  <div class="premium__grid">
+    <div class="premium__copy reveal">
+      <p class="kicker"><i class="kicker__bar"></i><span data-i18n="premium.kicker">Premium</span></p>
+      <h2 data-i18n="premium.title">Die App bleibt gratis & privat. Premium ist optional.</h2>
+      <p data-i18n="premium.lead">Budget, Sparziele und Analyse kosten dauerhaft nichts. Wer Berichte zum Abheften oder einen Wechsel zwischen Geräten braucht, schaltet das mit Premium frei.</p>
+      <ul class="premium__list">
+        <li data-i18n="premium.l1">PDF-Monatsberichte zum Teilen oder Abheften</li>
+        <li data-i18n="premium.l2">Backup-Export & Import zwischen Geräten</li>
+        <li data-i18n="premium.l3">Neue Funktionen — laufend mehr, ohne Aufpreis</li>
+      </ul>
+    </div>
+
+    <div class="premium__card reveal" style="--delay:100ms">
+      <span class="premium__tag" data-i18n="premium.cardTag">TapFlow Premium</span>
+      <div class="premium__price">
+        <span class="premium__price-sign">€</span><strong>4</strong><sup>,99</sup>
+        <small data-i18n="premium.perMonth">/ Monat</small>
+      </div>
+      <ul class="premium__check">
+        <li data-i18n="premium.l1">PDF-Monatsberichte zum Teilen oder Abheften</li>
+        <li data-i18n="premium.l2">Backup-Export & Import zwischen Geräten</li>
+        <li data-i18n="premium.l3future">Weitere Funktionen folgen automatisch</li>
+      </ul>
+      <a href="#waitlist" class="btn btn--primary premium__cta" data-i18n="premium.cta">Premium vormerken</a>
+      <span class="premium__cancel" data-i18n="premium.cancel">Jederzeit kündbar — kein Kleingedrucktes.</span>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── FAQ ───────────────────────── -->
+<section class="section" id="faq">
+  <div class="section__head reveal">
+    <p class="kicker"><i class="kicker__bar"></i><span data-i18n="faq.kicker">FAQ</span></p>
+    <h2 data-i18n="faq.title">Gut zu wissen</h2>
+  </div>
+
+  <div class="faq-list reveal">
+    <div class="faq-item">
+      <button class="faq-item__q">
+        <span data-i18n="faq.q1">Ist TapFlow kostenlos?</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-item__a"><p data-i18n="faq.a1">Ja. Budget, Sparziele, Beleg-Scanner und Analyse sind dauerhaft kostenlos. Premium (4,99€/Monat) schaltet nur PDF-Reports und Import/Export frei — und ist jederzeit kündbar.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-item__q">
+        <span data-i18n="faq.q2">Werden meine Daten in der Cloud gespeichert?</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-item__a"><p data-i18n="faq.a2">Nein. TapFlow speichert ausschließlich lokal auf deinem Gerät. Es gibt keinen Server, der deine Transaktionen je sieht. Einen Export teilst du nur, wenn du es selbst auslöst.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-item__q">
+        <span data-i18n="faq.q3">Wie kündige ich Premium?</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-item__a"><p data-i18n="faq.a3">Mit einem Tap im Profil, jederzeit zum Monatsende. Keine Mindestlaufzeit, keine Rückfragen.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-item__q">
+        <span data-i18n="faq.q4">Wann startet TapFlow?</span>
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="faq-item__a"><p data-i18n="faq.a4">TapFlow ist aktuell in aktiver Entwicklung. Trag dich in die Warteliste ein, um als Erstes Bescheid zu bekommen.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ───────────────────────── WAITLIST / CTA ───────────────────────── -->
+<section class="section cta" id="waitlist">
+  <div class="cta__card reveal">
+    <div class="cta__glow" data-parallax="0.04"></div>
+    <h2 data-i18n="cta.title">Sei beim Launch dabei</h2>
+    <p data-i18n="cta.sub">TapFlow ist in aktiver Entwicklung und erscheint bald in den App Stores.</p>
+    <div class="store-badges">
+      <span class="store-badge">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.59.7 3.32 1.74-3.05 1.83-2.31 5.85.52 7.01-.6 1.49-1.45 2.96-2.49 4.26zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.51-3.74 4.25z"/></svg>
+        <span data-i18n="cta.storeSoon1">App Store — bald</span>
+      </span>
+      <span class="store-badge">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M3.6 2.4c-.3.3-.5.7-.5 1.2v17c0 .5.2.9.5 1.2l9.4-9.7L3.6 2.4zM13.7 11.9l2.6 2.6 5-2.9c.7-.4.7-1.5 0-1.9l-5-2.9-2.6 2.6 0 2.5zM4.5 21.4l8.2-8.5-8.2-8.5c-.2.2-.4.5-.4.9v15.2c0 .4.2.7.4.9zM13.7 12.1l-9 9.3c.2.1.3.1.5.1.2 0 .5-.1.7-.2l9.6-5.6-1.8-1.8z"/></svg>
+        <span data-i18n="cta.storeSoon2">Google Play — bald</span>
+      </span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- ───────────────────────── FOOTER ───────────────────────── -->
+<footer class="footer">
+  <div class="footer__inner">
+    <div class="brand">
+      <span class="brand__icon">💰</span>
+      <span class="brand__name">TapFlow</span>
+    </div>
+    <p class="footer__tag" data-i18n="footer.tag">Deine Zahlen. Privat verstanden.</p>
+    <div class="footer__links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="agb.html">AGB</a>
+    </div>
+    <p class="footer__copy">© 2026 TapFlow. <span data-i18n="footer.rights">Alle Rechte vorbehalten.</span></p>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
